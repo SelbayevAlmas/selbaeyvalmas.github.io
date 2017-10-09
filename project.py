@@ -11,6 +11,7 @@ session = DBSession()
 app = Flask(__name__)
 
 @app.route('/')
+@app.route('https://selbaeyvalmas.github.io/restaurant/<int:restaurant_id>/menu/')
 @app.route('/restaurant/<int:restaurant_id>/menu/')
 def restaurantMenu(restaurant_id):
     restaurant=session.query(Restaurant).filter_by(id=restaurant_id).one()
